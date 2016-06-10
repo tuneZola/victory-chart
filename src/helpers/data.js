@@ -18,11 +18,21 @@ export default {
   },
 
   getStringsFromAxes(props, axis) {
-    if (!props.tickValues || (!Array.isArray(props.tickValues) && !props.tickValues[axis])) {
-      return [];
-    }
-    const tickValueArray = props.tickValues[axis] || props.tickValues;
-    return tickValueArray.filter((val) => typeof val === "string");
+    const getStringsFromTickValues = () => {
+      if (!props.tickValues || (!Array.isArray(props.tickValues) && !props.tickValues[axis])) {
+        return null;
+      }
+      const tickValueArray = props.tickValues[axis] || props.tickValues;
+      return tickValueArray.filter((val) => typeof val === "string");
+    };
+
+    const getStringsFromTickFormat = () => {
+      if (!props.tickFormat || !Array.isArray(props.tickFormat)) {
+        return null;
+      }
+      return props.tickFormat.filter((val) => typeof val === "string");
+    };
+    return getStringsFromTickValues() || getStringsFromTickFormat() || [];
   },
 
   getStringsFromCategories(props, axis) {

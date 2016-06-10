@@ -84,7 +84,8 @@ export default {
     const axisLabelProps = this.getAxisLabelProps(props, calculatedValues);
 
     return ticks.reduce((memo, data, index) => {
-      const tick = stringTicks ? props.tickValues[data - 1] : data;
+      const tick = stringTicks ? this.getStringTick(props, data) : data;
+      console.log(ticks, data, tick)
       const tickStyle = Helpers.evaluateStyle(style.ticks, tick);
       const scaledTick = scale(data);
       const tickPosition = this.getTickPosition(tickStyle, orientation, isVertical);
@@ -140,6 +141,10 @@ export default {
     }, {});
   },
 
+  getStringTick(props, data) {
+    return props.tickValues ? props.tickValues[data - 1] : props.tickFormat[data - 1];
+  },
+
   getCalculatedValues(props, defaultStyles) {
     const style = this.getStyles(props, defaultStyles);
     const padding = Helpers.getPadding(props);
@@ -181,9 +186,10 @@ export default {
   },
 
   getTicks(props, scale) {
-    if (props.tickValues) {
+    if (props.tickValues || Array.isArray(props.tickFormat)) {
       if (Axis.stringTicks(props)) {
-        return range(1, props.tickValues.length + 1);
+        return props.tickValues && props.tickValues.length ?
+          range(1, props.tickValues.length + 1) : range(1, props.tickFormat.length + 1);
       }
       return props.tickValues;
     } else if (scale.ticks && isFunction(scale.ticks)) {
@@ -208,10 +214,12 @@ export default {
   getTickFormat(props, scale, ticks) {
     if (props.tickFormat && isFunction(props.tickFormat)) {
       return props.tickFormat;
+    } else if (Axis.stringTicks(props)) {
+      return (x, index) => {
+        return props.tickValues ? props.tickValues[index] : props.tickFormat[index];
+      };
     } else if (props.tickFormat && Array.isArray(props.tickFormat)) {
       return (x, index) => props.tickFormat[index];
-    } else if (Axis.stringTicks(props)) {
-      return (x, index) => props.tickValues[index];
     } else if (scale.tickFormat && isFunction(scale.tickFormat)) {
       return scale.tickFormat(ticks.length);
     } else {

@@ -128,6 +128,9 @@ export default {
    * @returns {Boolean} true when tickValues contain strings
    */
   stringTicks(props) {
-    return props.tickValues !== undefined && Collection.containsStrings(props.tickValues);
+    const tickStrings = (tickArray) => {
+      return tickArray !== undefined && Collection.containsStrings(tickArray);
+    };
+    return tickStrings(props.tickValues) || tickStrings(props.tickFormat);
   }
 };

@@ -57,7 +57,8 @@ export default {
   getDomainFromTickValues(props) {
     let domain;
     if (Axis.stringTicks(props)) {
-      domain = [1, props.tickValues.length];
+      domain = props.tickValues.length ?
+        [1, props.tickValues.length] : [1, props.tickFormat.length];
     } else {
       // coerce ticks to numbers
       const ticks = props.tickValues.map((value) => +value);
