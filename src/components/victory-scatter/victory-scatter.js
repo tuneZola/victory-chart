@@ -5,7 +5,7 @@ import Data from "../../helpers/data";
 import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
   VictoryContainer
-} from "victory-core";
+} from "tune-victory-core";
 import ScatterHelpers from "./helper-methods";
 
 import assign from "lodash/assign";

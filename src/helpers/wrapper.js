@@ -2,7 +2,7 @@ import React from "react";
 import Axis from "./axis";
 import Data from "./data";
 import Domain from "./domain";
-import { Style, Transitions, Helpers, Collection } from "victory-core";
+import { Style, Transitions, Helpers, Collection } from "tune-victory-core";
 import uniq from "lodash/uniq";
 import flatten from "lodash/flatten";
 import defaults from "lodash/defaults";

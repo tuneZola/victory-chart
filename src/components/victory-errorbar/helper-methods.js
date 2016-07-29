@@ -1,4 +1,4 @@
-import { Helpers, Events } from "victory-core";
+import { Helpers, Events } from "tune-victory-core";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";

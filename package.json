@@ -1,6 +1,6 @@
 {
   "name": "tune-victory-chart",
-  "version": "10.1.01",
+  "version": "10.1.02",
   "description": "Chart Component for Victory",
   "main": "lib/index.js",
   "repository": {

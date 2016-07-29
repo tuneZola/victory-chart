@@ -5,7 +5,7 @@ import Domain from "../../helpers/domain";
 import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
   VictoryContainer
-} from "victory-core";
+} from "tune-victory-core";
 import Area from "./area";
 import AreaHelpers from "./helper-methods";
 

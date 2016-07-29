@@ -1,4 +1,4 @@
-import { Helpers, Events } from "victory-core";
+import { Helpers, Events } from "tune-victory-core";
 import Scale from "../../helpers/scale";
 import Domain from "../../helpers/domain";
 import omit from "lodash/omit";

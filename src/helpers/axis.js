@@ -1,4 +1,4 @@
-import { Collection } from "victory-core";
+import { Collection } from "tune-victory-core";
 import identity from "lodash/identity";
 import React from "react";
 

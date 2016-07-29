@@ -3,7 +3,7 @@ import Candle from "./candle";
 import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
   VictoryContainer
-} from "victory-core";
+} from "tune-victory-core";
 import CandlestickHelpers from "./helper-methods";
 
 import assign from "lodash/assign";

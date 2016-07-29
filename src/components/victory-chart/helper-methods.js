@@ -2,7 +2,7 @@ import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
 import Wrapper from "../../helpers/wrapper";
 import React from "react";
-import { Collection, Log } from "victory-core";
+import { Collection, Log } from "tune-victory-core";
 
 import invert from "lodash/invert";
 import sortBy from "lodash/sortBy";

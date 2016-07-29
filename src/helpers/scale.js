@@ -1,4 +1,4 @@
-import { Collection, Helpers } from "victory-core";
+import { Collection, Helpers } from "tune-victory-core";
 import * as d3Scale from "d3-scale";
 import flatten from "lodash/flatten";
 import includes from "lodash/includes";

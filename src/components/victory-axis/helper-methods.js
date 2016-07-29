@@ -1,7 +1,7 @@
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
-import { Helpers } from "victory-core";
+import { Helpers } from "tune-victory-core";
 
 import range from "lodash/range";
 import assign from "lodash/assign";

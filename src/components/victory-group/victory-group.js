@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react";
 import { PropTypes as CustomPropTypes, Helpers, VictorySharedEvents,
-  VictoryContainer } from "victory-core";
+  VictoryContainer } from "tune-victory-core";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Wrapper from "../../helpers/wrapper";

@@ -1,7 +1,7 @@
 import Data from "./data";
 import Axis from "./axis";
 import Scale from "./scale";
-import { Helpers, Collection } from "victory-core";
+import { Helpers, Collection } from "tune-victory-core";
 
 import flatten from "lodash/flatten";
 import includes from "lodash/includes";

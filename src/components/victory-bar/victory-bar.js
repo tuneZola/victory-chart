@@ -2,7 +2,7 @@ import React, { PropTypes } from "react";
 import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
   VictoryContainer
-} from "victory-core";
+} from "tune-victory-core";
 import Bar from "./bar";
 import BarHelpers from "./helper-methods";
 import Data from "../../helpers/data";
