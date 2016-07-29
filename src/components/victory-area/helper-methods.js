@@ -1,8 +1,9 @@
-import { assign, last } from "lodash";
 import { Helpers } from "victory-core";
 import Data from "../../helpers/data";
 import Domain from "../../helpers/domain";
 import Scale from "../../helpers/scale";
+import last from "lodash/last";
+import assign from "lodash/assign";
 
 export default {
 

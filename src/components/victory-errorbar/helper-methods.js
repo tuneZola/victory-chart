@@ -1,9 +1,15 @@
-import { assign, omit, defaults, isArray, flatten, pick } from "lodash";
 import { Helpers, Events } from "victory-core";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
 import Data from "../../helpers/data";
+
+import pick from "lodash/pick";
+import omit from "lodash/omit";
+import assign from "lodash/assign";
+import flatten from "lodash/flatten";
+import isArray from "lodash/isArray";
+import defaults from "lodash/defaults";
 
 export default {
   getBaseProps(props, fallbackProps) {

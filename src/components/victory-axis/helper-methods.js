@@ -1,8 +1,14 @@
-import { includes, defaults, isFunction, range, without, assign } from "lodash";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
 import { Helpers } from "victory-core";
+
+import range from "lodash/range";
+import assign from "lodash/assign";
+import without from "lodash/without";
+import defaults from "lodash/defaults";
+import includes from "lodash/includes";
+import isFunction from "lodash/isFunction";
 
 const orientationSign = {
   top: -1,

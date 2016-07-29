@@ -3,10 +3,15 @@ import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
   VictoryContainer
 } from "victory-core";
-import { assign, defaults, isFunction, partialRight } from "lodash";
+
 import ErrorBar from "./errorbar";
 import Data from "../../helpers/data";
 import ErrorBarHelpers from "./helper-methods";
+
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 const fallbackProps = {
   props: {

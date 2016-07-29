@@ -1,8 +1,11 @@
-import { values, pick, omit, defaults } from "lodash";
 import { Helpers, Events } from "victory-core";
 import Scale from "../../helpers/scale";
 import Domain from "../../helpers/domain";
 import Data from "../../helpers/data";
+import omit from "lodash/omit";
+import pick from "lodash/pick";
+import values from "lodash/values";
+import defaults from "lodash/defaults";
 
 export default {
   getBaseProps(props, fallbackProps) {

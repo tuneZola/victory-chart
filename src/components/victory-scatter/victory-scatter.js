@@ -1,5 +1,4 @@
 import React, { PropTypes } from "react";
-import { assign, defaults, isFunction, partialRight } from "lodash";
 import Point from "./point";
 import Domain from "../../helpers/domain";
 import Data from "../../helpers/data";
@@ -8,6 +7,11 @@ import {
   VictoryContainer
 } from "victory-core";
 import ScatterHelpers from "./helper-methods";
+
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 const fallbackProps = {
   props: {

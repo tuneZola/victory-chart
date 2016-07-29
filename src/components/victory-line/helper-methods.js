@@ -1,8 +1,11 @@
-import { sortBy, defaults, last } from "lodash";
 import { Helpers } from "victory-core";
 import Data from "../../helpers/data";
 import Domain from "../../helpers/domain";
 import Scale from "../../helpers/scale";
+
+import last from "lodash/last";
+import sortBy from "lodash/sortBy";
+import defaults from "lodash/defaults";
 
 export default {
 

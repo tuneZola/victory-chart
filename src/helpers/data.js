@@ -1,6 +1,7 @@
-import { assign, uniq } from "lodash";
 import { Helpers, Collection } from "victory-core";
 import Scale from "./scale";
+import uniq from "lodash/uniq";
+import assign from "lodash/assign";
 
 export default {
   // String Data

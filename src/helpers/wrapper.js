@@ -1,10 +1,13 @@
-import { defaults, flatten, isFunction, partialRight, uniq } from "lodash";
 import React from "react";
 import Axis from "./axis";
 import Data from "./data";
 import Domain from "./domain";
 import { Style, Transitions, Helpers, Collection } from "victory-core";
-
+import uniq from "lodash/uniq";
+import flatten from "lodash/flatten";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 export default {
   getData(props, childComponents) {

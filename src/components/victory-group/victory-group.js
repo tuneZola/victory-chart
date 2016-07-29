@@ -1,10 +1,12 @@
-import { assign, defaults } from "lodash";
 import React, { PropTypes } from "react";
 import { PropTypes as CustomPropTypes, Helpers, VictorySharedEvents,
   VictoryContainer } from "victory-core";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Wrapper from "../../helpers/wrapper";
+
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
 
 const fallbackProps = {
   props: {

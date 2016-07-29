@@ -1,4 +1,4 @@
-import { assign, isFunction, defaults, partialRight } from "lodash";
+
 import React, { PropTypes } from "react";
 import Data from "../../helpers/data";
 import Domain from "../../helpers/domain";
@@ -8,6 +8,11 @@ import {
 } from "victory-core";
 import Area from "./area";
 import AreaHelpers from "./helper-methods";
+
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 const fallbackProps = {
   props: {

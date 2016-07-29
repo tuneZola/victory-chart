@@ -1,9 +1,12 @@
-import { invert, sortBy, values } from "lodash";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
 import Wrapper from "../../helpers/wrapper";
 import React from "react";
 import { Collection, Log } from "victory-core";
+
+import invert from "lodash/invert";
+import sortBy from "lodash/sortBy";
+import values from "lodash/values";
 
 const identity = (x) => x;
 

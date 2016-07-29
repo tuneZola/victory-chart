@@ -1,8 +1,11 @@
-import { flatten, includes, isPlainObject } from "lodash";
 import Data from "./data";
 import Axis from "./axis";
 import Scale from "./scale";
 import { Helpers, Collection } from "victory-core";
+
+import flatten from "lodash/flatten";
+import includes from "lodash/includes";
+import isPlainObject from "lodash/isPlainObject";
 
 export default {
   getDomain(props, axis) {

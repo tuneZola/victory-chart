@@ -1,5 +1,5 @@
 import { Collection } from "victory-core";
-import { identity } from "lodash";
+import identity from "lodash/identity";
 import React from "react";
 
 export default {

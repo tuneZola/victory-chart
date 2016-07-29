@@ -1,4 +1,3 @@
-import { assign, defaults, isFunction, partialRight } from "lodash";
 import React, { PropTypes } from "react";
 import {
   PropTypes as CustomPropTypes, Helpers, Events, VictoryTransition, VictoryLabel,
@@ -7,6 +6,11 @@ import {
 import AxisLine from "./axis-line";
 import AxisHelpers from "./helper-methods";
 import Axis from "../../helpers/axis";
+
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 const fallbackProps = {
   props: {

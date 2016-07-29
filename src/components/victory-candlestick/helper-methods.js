@@ -1,7 +1,10 @@
-import { assign, pick, omit, defaults } from "lodash";
 import { Helpers, Events } from "victory-core";
 import Scale from "../../helpers/scale";
 import Domain from "../../helpers/domain";
+import omit from "lodash/omit";
+import pick from "lodash/pick";
+import assign from "lodash/assign";
+import defaults from "lodash/defaults";
 
 export default {
   getBaseProps(props, fallbackProps) { // eslint-disable-line max-statements
