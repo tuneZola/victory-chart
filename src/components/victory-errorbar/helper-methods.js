@@ -1,4 +1,4 @@
-import { Helpers, Events } from "tune-victory-core";
+import { Helpers, Events, Log } from "tune-victory-core";
 import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Domain from "../../helpers/domain";
@@ -55,6 +55,11 @@ export default {
 
   getErrorData(props) {
     if (props.data) {
+      if (props.data.length < 1) {
+        Log.warn("This is an empty dataset.");
+        return [];
+      }
+
       return this.formatErrorData(props.data, props);
     } else {
       const generatedData = (props.errorX || props.errorY) && this.generateData(props);
@@ -72,8 +77,13 @@ export default {
 
     const errorNames = {x: "errorX", y: "errorY"};
     const errors = datum[errorNames[axis]];
+    if (errors === 0) {
+      return false;
+    }
+
     return isArray(errors) ?
-      [ scale[axis](errors[0] + datum[axis]), scale[axis](datum[axis] - errors[1]) ] :
+      [ errors[0] === 0 ? false : scale[axis](errors[0] + datum[axis]),
+        errors[1] === 0 ? false : scale[axis](datum[axis] - errors[1]) ] :
       [ scale[axis](errors + datum[axis]), scale[axis](datum[axis] - errors) ];
   },
 
@@ -114,6 +124,11 @@ export default {
       return Domain.padDomain(categoryDomain, props, axis);
     }
     const dataset = this.getErrorData(props);
+
+    if (dataset.length < 1) {
+      return Scale.getBaseScale(props, axis).domain();
+    }
+
     const domain = this.getDomainFromData(props, axis, dataset);
     return Domain.cleanDomain(Domain.padDomain(domain, props, axis), props);
   },

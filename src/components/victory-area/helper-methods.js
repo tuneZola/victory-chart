@@ -1,4 +1,4 @@
-import { Helpers } from "tune-victory-core";
+import { Helpers, Log } from "tune-victory-core";
 import Data from "../../helpers/data";
 import Domain from "../../helpers/domain";
 import Scale from "../../helpers/scale";
@@ -27,9 +27,9 @@ export default {
 
     const labelProps = {
       key: "area-label",
-      x: scale.x(lastData.x) + labelStyle.padding,
-      y: scale.y(lastData.y1),
-      y0: scale.y(lastData.y0),
+      x: lastData ? scale.x(lastData.x) + labelStyle.padding : 0,
+      y: lastData ? scale.y(lastData.y1) : 0,
+      y0: lastData ? scale.y(lastData.y0) : 0,
       style: labelStyle,
       textAnchor: labelStyle.textAnchor || "start",
       verticalAnchor: labelStyle.verticalAnchor || "middle",
@@ -69,10 +69,16 @@ export default {
   },
 
   getDataWithBaseline(props, domain) {
-    const data = Data.getData(props);
-    const defaultMin = Scale.getScaleType(props, "y") === "log" ? 1 / Number.MAX_SAFE_INTEGER : 0;
+    let data = Data.getData(props);
 
+    if (data.length < 2) {
+      Log.warn("Area requires at least two data points.");
+      data = [];
+    }
+
+    const defaultMin = Scale.getScaleType(props, "y") === "log" ? 1 / Number.MAX_SAFE_INTEGER : 0;
     const minY = Math.min(...domain.y) > 0 ? Math.min(...domain.y) : defaultMin;
+
     return data.map((datum) => {
       const y1 = datum.yOffset ? datum.yOffset + datum.y : datum.y;
       const y0 = datum.yOffset || minY;

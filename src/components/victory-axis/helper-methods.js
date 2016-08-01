@@ -178,9 +178,9 @@ export default {
       childProps[index] = {
         axis: axisProps,
         axisLabel: axisLabelProps,
-        ticks: this.getTickProps(tickLayout, style.tickStyle, tick),
+        ticks: this.getTickProps(tickLayout, styles.tickStyle, tick),
         tickLabels: this.getTickLabelProps(
-          tickLayout, assign({}, anchors, styles.tickLabels), tick, tickFormat(tick, index)
+          tickLayout, assign({}, anchors, styles.labelStyle), tick, tickFormat(tick, index)
         ),
         grid: this.getGridProps(gridLayout, styles.gridStyle, tick)
       };

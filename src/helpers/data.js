@@ -1,4 +1,4 @@
-import { Helpers, Collection } from "tune-victory-core";
+import { Helpers, Collection, Log } from "tune-victory-core";
 import Scale from "./scale";
 import uniq from "lodash/uniq";
 import assign from "lodash.assign";
@@ -42,7 +42,12 @@ export default {
 
   getData(props) {
     if (props.data) {
-      return this.formatData(props.data, props);
+      if (props.data.length < 1) {
+        Log.warn("This is an empty dataset.");
+        return [];
+      } else {
+        return this.formatData(props.data, props);
+      }
     } else {
       const generatedData = (props.x || props.y) && this.generateData(props);
       return this.formatData(generatedData, props);

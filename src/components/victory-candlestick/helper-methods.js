@@ -1,4 +1,4 @@
-import { Helpers, Events } from "tune-victory-core";
+import { Helpers, Events, Log } from "tune-victory-core";
 import Scale from "../../helpers/scale";
 import Domain from "../../helpers/domain";
 import omit from "lodash/omit";
@@ -70,7 +70,15 @@ export default {
   },
 
   getData(props) {
-    const data = props.data;
+    let data;
+
+    if (props.data && props.data.length > 0) {
+      data = props.data;
+    } else {
+      Log.warn("This is an empty dataset.");
+      data = [];
+    }
+
     const accessor = {
       x: Helpers.createAccessor(props.x),
       open: Helpers.createAccessor(props.open),
@@ -106,10 +114,15 @@ export default {
          memo.concat(...datum[axis]) : memo.concat(datum[axis]);
       },
       []);
+
+      if (allData.length < 1) {
+        return Scale.getBaseScale(props, axis).domain();
+      }
+
       const min = Math.min(...allData);
       const max = Math.max(...allData);
       if (min === max) {
-        const adjustedMax = max === 0 ? 1 : max;
+        const adjustedMax = max === 0 ? 1 : max + max;
         return [0, adjustedMax];
       }
       domain = [min, max];
