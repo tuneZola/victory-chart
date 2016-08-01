@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 
 
 export default class Candle extends React.Component {

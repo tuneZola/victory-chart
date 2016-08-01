@@ -3,7 +3,7 @@ import Scale from "../../helpers/scale";
 import Domain from "../../helpers/domain";
 import omit from "lodash/omit";
 import pick from "lodash/pick";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 
 export default {

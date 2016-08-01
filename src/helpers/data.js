@@ -1,7 +1,7 @@
 import { Helpers, Collection } from "tune-victory-core";
 import Scale from "./scale";
 import uniq from "lodash/uniq";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 
 export default {
   // String Data

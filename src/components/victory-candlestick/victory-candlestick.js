@@ -6,7 +6,7 @@ import {
 } from "tune-victory-core";
 import CandlestickHelpers from "./helper-methods";
 
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 import isFunction from "lodash/isFunction";
 import partialRight from "lodash/partialRight";

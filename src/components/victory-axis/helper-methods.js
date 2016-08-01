@@ -4,7 +4,7 @@ import Domain from "../../helpers/domain";
 import { Helpers } from "tune-victory-core";
 
 import range from "lodash/range";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import without from "lodash/without";
 import defaults from "lodash/defaults";
 import includes from "lodash/includes";

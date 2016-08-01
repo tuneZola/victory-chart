@@ -6,7 +6,7 @@ import Data from "../../helpers/data";
 
 import pick from "lodash/pick";
 import omit from "lodash/omit";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import flatten from "lodash/flatten";
 import isArray from "lodash/isArray";
 import defaults from "lodash/defaults";

@@ -6,7 +6,7 @@ import Scale from "../../helpers/scale";
 import Wrapper from "../../helpers/wrapper";
 
 import uniq from "lodash/uniq";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 
 const fallbackProps = {

@@ -5,7 +5,7 @@ import Scale from "../../helpers/scale";
 import Axis from "../../helpers/axis";
 import Wrapper from "../../helpers/wrapper";
 
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 
 const fallbackProps = {

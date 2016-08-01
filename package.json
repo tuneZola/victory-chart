@@ -1,8 +1,8 @@
 {
   "name": "tune-victory-chart",
-  "version": "10.1.02",
+  "version": "10.1.03",
   "description": "Chart Component for Victory",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tuneZola/victory-chart.git"
